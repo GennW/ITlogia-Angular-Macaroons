@@ -1,1 +1,229 @@
-/* You can add global styles to this file, and also import other style files */
+/* Reset and base styles  */
+* {
+	padding: 0px;
+	margin: 0px;
+	border: none;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Links */
+
+a, a:link, a:visited  {
+    text-decoration: none;
+}
+
+a:hover  {
+    text-decoration: none;
+}
+
+/* Common */
+
+aside, nav, footer, header, section, main {
+	display: block;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    font-size: inherit;
+	font-weight: inherit;
+}
+
+ul, ul li {
+	list-style: none;
+}
+
+
+address {
+  font-style: normal;
+}
+
+/* Form */
+
+input, textarea, button, select {
+	font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: transparent;
+}
+
+input::-ms-clear {
+	display: none;
+}
+
+button, input[type="submit"] {
+    display: inline-block;
+    box-shadow: none;
+    background-color: transparent;
+    background: none;
+    cursor: pointer;
+}
+
+input:focus, input:active,
+button:focus, button:active {
+    outline: none;
+}
+
+button::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+
+label {
+	cursor: pointer;
+}
+
+legend {
+	display: block;
+}
+h1 {
+    font-size: xx-small;
+    color: rgb(236, 184, 184);
+}
+
+// основные
+@font-face {
+    font-family: Gilroy;
+    src: url(./assets/fonts/gilroy-regular.ttf);
+}
+
+@font-face {
+    font-family: GilroyMedium;
+    src: url(./assets/fonts/gilroy-medium.ttf);
+}
+
+@font-face {
+    font-family: Gilroy;
+    src: url(./assets/fonts/gilroy-bold.ttf);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: GilroyExtraBold;
+    src: url(./assets/fonts/gilroy-extrabold.ttf);
+}
+
+@font-face {
+    font-family: Tavolga;
+    src: url(./assets/fonts/tavolga-free.ttf);
+}
+
+
+body {
+    position: relative;
+    z-index: 4;
+    background-color: #ffefef;
+    font-family: 'Gilroy', sans-serif;
+
+}
+
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.phone__link {
+    font-size: 16px;
+    /* font-family: "Gilroy", sans-serif; */
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+.logo-link {
+    font-size: 18px;
+    font-family: "Tavolga", sans-serif;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+}
+
+.btn {
+    font-size: 18px;
+    /* padding: 22px 21px 21px; */
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    background-image: -moz-linear-gradient(90deg, rgb(113, 8, 30) 0%, rgb(215, 72, 92) 100%);
+    background-image: -webkit-linear-gradient(90deg, rgb(113, 8, 30) 0%, rgb(215, 72, 92) 100%);
+    background-image: linear-gradient(90deg, rgb(113, 8, 30) 0%, rgb(215, 72, 92) 100%);
+    border-radius: 30px;
+    transition: all 300ms linear;
+}
+
+.btn:hover {
+    box-shadow: 0px 5px 9px 1px rgba(130, 19, 40, 0.5);
+}
+
+
+.gift {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    z-index: 9;
+}
+
+.gift__text {
+    position: relative;
+    bottom: -100px;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    opacity: 0;
+    margin-right: 9px;
+    width: 184px;
+    height: 64px;
+    background-image: url("./assets/img/present-text.png");
+    background-repeat: no-repeat;
+    transition: all 0.5s ease;
+}
+
+.gift__img {
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    transition: all 300ms linear;
+}
+
+.gift__img:hover {
+    box-shadow: 0px 0px 12.6px 2.4px rgba(130, 19, 40, 0.5);
+}
+
+.gift:hover .gift__text {
+    opacity: 1;
+    bottom: 0;
+}
+
+@media screen and (max-width: 1370px) {
+    .gift__img-img {
+        opacity: 0.6;
+    }
+
+    .gift__img-img:hover {
+        opacity: 1;
+    }
+
+}
+@media screen and (max-width: 559px) {
+    .gift {
+        right: 15px;
+        bottom: 15px;
+    }
+}
+
+@media screen and (max-width: 932px) {
+    .container {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+}
+
+@media screen and (max-width: 704px) {
+
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}

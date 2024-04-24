@@ -1,0 +1,29 @@
+<footer class="footer">
+    <div class="container footer__container">
+
+        <div class="logo logo__footer">
+            <a href="#" class="logo-link">macaroons</a>
+        </div>
+        <div class="footer_rights">Все права защищены, 2020</div>
+
+        <div class="footer__wrapper-insta">
+            <a href="https://vk.com/" target="_blank" class="footer__wraper-link">
+                <img class="insta" src="../assets/img/vk.png" alt="instagram">
+            </a>
+            <a href="{{VkLink}}" target="_blank" class="footer__wraper-link">
+                <div class="insta__text" data-t>Мы во ВКонтакте</div>
+            </a>
+        </div>
+        <div class="phone phone__footer">
+            <a class="phone__link" href="tel:+375293689868">+375 (29) 368-98-68</a>
+        </div>
+    </div>
+    <div class="gift gift-wrapper" *ngIf="showPresent">
+        <div class="gift__text">
+            <!-- Оформите заказ и получите подарок! -->
+        </div>
+        <div class="gift__img">
+            <img class="gift__img-img" src="../assets/img/present1.png" alt="Gift">
+        </div>
+    </div>
+</footer>
