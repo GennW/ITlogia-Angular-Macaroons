@@ -59,7 +59,7 @@
               <h4 class="change__title">{{macaroon.title}}</h4>
               <div class="change__action">
                   <div class="change__action-unit">{{macaroon.unit }}<span> шт.</span></div>
-                  <div class="change__action-price">{{(macaroon.price % 1 === 0) ? macaroon.price : macaroon.price.toFixed(2) }}<span>{{macaroon.currency}}</span></div>
+                  <div class="change__action-price">{{(macaroon.price % 1 === 0) ? macaroon.price : macaroon.price.toFixed(2) | currency:'USD'}}<span></span></div>
                   <div class="change__action-button">
                       <button class="btn change__action-btn" (click)="addToCart(orderForm, macaroon)">Заказать</button>
                   </div>

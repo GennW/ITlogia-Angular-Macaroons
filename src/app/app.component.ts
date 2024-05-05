@@ -1,13 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AdvantagesType } from './components/types/advantages.type';
-import { ChangeMacaroonType } from './components/types/change-macaroon.type';
+import { ProductType } from './components/types/change-macaroon.type';
+import { ProductService } from './services/product.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
   public advantages: AdvantagesType[] = [
     {
@@ -33,36 +34,7 @@ export class AppComponent {
   ];
 
 
-  public macaroonCard: ChangeMacaroonType[] = [
-    {
-      image: 'changeMac1.png',
-      title: 'Макарун с малиной',
-      unit: 1,
-      price: 1.70,
-      currency: ' ₽',
-    },
-    {
-      image: 'changeMac2.png',
-      title: 'Макарун с манго',
-      unit: 1,
-      price: 1.70,
-      currency: ' ₽',
-    },
-    {
-      image: 'changeMac3.png',
-      title: 'Пирог с ванилью',
-      unit: 1,
-      price: 1.80,
-      currency: ' ₽',
-    },
-    {
-      image: 'changeMac4.png',
-      title: 'Пирог с фисташками',
-      unit: 1,
-      price: 1.90,
-      currency: ' ₽',
-    },
-  ];
+  public macaroonCard: ProductType[] = [];
 
 
   public formValues = {
@@ -70,12 +42,18 @@ export class AppComponent {
     name: '',
     phone: ''
   }
+  constructor(private productService: ProductService) {
 
-  public toScroll(traget: HTMLElement):void {
-    traget.scrollIntoView({behavior: "smooth"});
   }
 
-  public addToCart(target: HTMLElement, product: ChangeMacaroonType): void {
+  ngOnInit(): void {
+    this.macaroonCard = this.productService.getProduct();
+  }
+  public toScroll(traget: HTMLElement): void {
+    traget.scrollIntoView({ behavior: "smooth" });
+  }
+
+  public addToCart(target: HTMLElement, product: ProductType): void {
     this.toScroll(target);
     this.formValues.productTitle = product.title.toUpperCase();
   }
