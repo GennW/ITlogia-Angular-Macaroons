@@ -10,6 +10,9 @@ import { CartService } from './services/cart.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+  macaroons!: HTMLElement | null;
+  orderElement!: HTMLElement | null;
+  advantagesElement!: HTMLElement | null;
   public totalCartAmount: number = 0;
 
   public advantages: AdvantagesType[] = [
@@ -42,7 +45,7 @@ export class AppComponent implements OnInit {
       title: '',
       unit: 0,
       price: 0,
-  }
+    }
   ];
 
 
@@ -57,10 +60,16 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.macaroonCard = this.productService.getProduct();
+    if (this.macaroons && this.orderElement && this.advantagesElement) {
+      this.macaroons = document.querySelector('#macaroons');
+      this.orderElement = document.querySelector('#orderElement');
+      this.advantagesElement = document.querySelector('#advantagesElement');
+
+    }
 
   }
-  public toScroll(traget: HTMLElement): void {
-    traget.scrollIntoView({ behavior: "smooth" });
+  public toScroll(target: HTMLElement): void {
+    target.scrollIntoView({ behavior: "smooth" });
   }
 
   public addToCart(product: ProductType, target: HTMLElement): void {
@@ -69,7 +78,7 @@ export class AppComponent implements OnInit {
     this.formValues.productTitle = product.title.toUpperCase();
     this.totalCartAmount += product.price;  // Обновление общей суммы в корзине при добавлении товара
     alert(`${product.title} добавлен в корзину!`)
-    
+
   }
 
   public createOrder(): void {

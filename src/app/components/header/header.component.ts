@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'header-component',
@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  @Input() macaroons!: HTMLElement;
+  @Input() orderElement!: HTMLElement;
+  @Input() advantagesElement!: HTMLElement;
+
   phoneNumber = '375293689868';
   formattedPhoneNumber: string;
   constructor() {
@@ -19,7 +23,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public toScroll(traget: HTMLElement):void {
-    traget.scrollIntoView({behavior: "smooth"});
+  public toScroll(target: HTMLElement):void {
+    target.scrollIntoView({behavior: "smooth"});
   }
 }
