@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  phoneNumber = '+7 (999) 100-00-00';
+  phoneNumber = '375293689868';
   formattedPhoneNumber: string;
   constructor() {
     this.formattedPhoneNumber = this.formatPhoneNumber(this.phoneNumber);

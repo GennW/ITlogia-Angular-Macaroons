@@ -1,0 +1,13 @@
+<div class="change__item">
+    <div class="change__img">
+        <img class="change__img-img" src="../assets/img/{{macaroon.image}}" alt="change macaroon {{i+1}}">
+    </div>
+    <h4 class="change__title">{{macaroon.title}}</h4>
+    <div class="change__action">
+        <div class="change__action-unit">{{macaroon.unit }}<span> шт.</span></div>
+        <div class="change__action-price">{{(macaroon.price % 1 === 0) ? macaroon.price : macaroon.price.toFixed(2) | currency:'RUB':'руб.' }}<span></span></div>
+        <div class="change__action-button">
+            <button class="btn change__action-btn" (click)="addProductToCart()">Заказать</button>
+        </div>
+    </div>
+</div>

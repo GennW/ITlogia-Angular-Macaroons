@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AdvantagesType } from './components/types/advantages.type';
 import { ProductType } from './components/types/change-macaroon.type';
 import { ProductService } from './services/product.service';
+import { CartService } from './services/cart.service';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,7 @@ import { ProductService } from './services/product.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+  public totalCartAmount: number = 0;
 
   public advantages: AdvantagesType[] = [
     {
@@ -34,7 +36,14 @@ export class AppComponent implements OnInit {
   ];
 
 
-  public macaroonCard: ProductType[] = [];
+  public macaroonCard: ProductType[] = [
+    {
+      image: '',
+      title: '',
+      unit: 0,
+      price: 0,
+  }
+  ];
 
 
   public formValues = {
@@ -42,20 +51,25 @@ export class AppComponent implements OnInit {
     name: '',
     phone: ''
   }
-  constructor(private productService: ProductService) {
+  constructor(private productService: ProductService, private cartService: CartService) {
 
   }
 
   ngOnInit(): void {
     this.macaroonCard = this.productService.getProduct();
+
   }
   public toScroll(traget: HTMLElement): void {
     traget.scrollIntoView({ behavior: "smooth" });
   }
 
-  public addToCart(target: HTMLElement, product: ProductType): void {
+  public addToCart(product: ProductType, target: HTMLElement): void {
+    this.cartService.count++;
     this.toScroll(target);
     this.formValues.productTitle = product.title.toUpperCase();
+    this.totalCartAmount += product.price;  // Обновление общей суммы в корзине при добавлении товара
+    alert(`${product.title} добавлен в корзину!`)
+    
   }
 
   public createOrder(): void {

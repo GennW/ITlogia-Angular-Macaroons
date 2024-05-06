@@ -1,104 +1,87 @@
 <section class="main">
-  <div class="container main__container">
-      <div class="main__content">
-          <h1 class="main__content-h1">Мягкие французские
-              пироженки Macaroons
-          </h1>
-          <div class="main__content-text">
-              Побалуйте себя и своих близких самыми вкусными и ароматными
-              домашними пироженками Macaroon!
-          </div>
-          <div class="main__content-action">
-              <button class="btn main__content-btn" (click)="toScroll(macaroons)">Выбрать макарун</button>
-          </div>
-      </div>
-      <div class="main__img">
-          <div class="circle"></div>
-          <img class="main__img-img" src="../assets/img/mainMac.png" alt="Picture Macaroon">
-      </div>
-  </div>
+    <div class="container main__container">
+        <div class="main__content">
+            <h1 class="main__content-h1">Мягкие французские
+                пироженки Macaroons
+            </h1>
+            <div class="main__content-text">
+                Побалуйте себя и своих близких самыми вкусными и ароматными
+                домашними пироженками Macaroon!
+            </div>
+            <div class="main__content-action">
+                <button class="btn main__content-btn" (click)="toScroll(macaroons)">Выбрать макарун</button>
+            </div>
+        </div>
+        <div class="main__img">
+            <div class="circle"></div>
+            <img class="main__img-img" src="../assets/img/mainMac.png" alt="Picture Macaroon">
+        </div>
+    </div>
 
 </section>
 
+
 <section class="advantages">
-  <div class="container advantages__container">
-      <h2 class="advantages__h2" id="about">
-          Мы печём для вас вкуснейшие макаруны
-          уже более 10 лет
-      </h2>
-      <div class="advantages__text">
-          Все пироженки мы готовим только из натуральных и качественных продуктов, без консервантов,
-          ароматизаторов, красителей. Используем в приготовлении сливочное масло 82,5%, без дрожжей, маргарина,
-          разрыхлителей и улучшителей муки.
-      </div>
-      <div class="advantages__items">
-          <div class="advantages__item" *ngFor="let advantage of advantages; let i = index;">
-              <div class="advantages__item-digital">
-                  <div class="advantages__item-circle">
-                      <div class="advantages__item-num">{{i + 1}}</div>
-                  </div>
-              </div>
-              <h4 class="advantages__item-title">{{advantage.title}}</h4>
-              <div class="advantages__item-text">{{advantage.text}}</div>
-          </div>
-      </div>
-      <div class="advantages__img">
-          <img class="advantages__img-img" src="../assets/img/oneMac.png" alt="picture macaroon">
-      </div>
-  </div>
+    <div class="container advantages__container">
+        <h2 class="advantages__h2" id="about">
+            Мы печём для вас вкуснейшие макаруны
+            уже более 10 лет
+        </h2>
+        <div class="advantages__text">
+            Все пироженки мы готовим только из натуральных и качественных продуктов, без консервантов,
+            ароматизаторов, красителей. Используем в приготовлении сливочное масло 82,5%, без дрожжей, маргарина,
+            разрыхлителей и улучшителей муки.
+        </div>
+        <div class="advantages__items">
+            <advantages-component *ngFor="let advantage of advantages; let i = index;" [advantage]="advantage"
+                [i]="i"></advantages-component>
+        </div>
+        <div class="advantages__img">
+            <img class="advantages__img-img" src="../assets/img/oneMac.png" alt="picture macaroon">
+        </div>
+    </div>
 </section>
 
 <section class="change">
-  <div class="container change__container">
-      <h2 class="change__h2" id="change-mac">Выберите свой макарун</h2>
-      <div class="change__grid" #macaroons>
-          <div class="change__item" *ngFor="let macaroon of macaroonCard; let i = index;">
-              <div class="change__img">
-                  <img class="change__img-img" src="../assets/img/{{macaroon.image}}" alt="change macaroon {{i+1}}">
-              </div>
-              <h4 class="change__title">{{macaroon.title}}</h4>
-              <div class="change__action">
-                  <div class="change__action-unit">{{macaroon.unit }}<span> шт.</span></div>
-                  <div class="change__action-price">{{(macaroon.price % 1 === 0) ? macaroon.price : macaroon.price.toFixed(2) | currency:'USD'}}<span></span></div>
-                  <div class="change__action-button">
-                      <button class="btn change__action-btn" (click)="addToCart(orderForm, macaroon)">Заказать</button>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
+    <div class="container change__container">
+        <h2 class="change__h2" id="change-mac">Выберите свой макарун</h2>
+        <div class="change__grid" #macaroons>
+            <product-component *ngFor="let macaroon of macaroonCard; let i = index;" [macaroon]="macaroon" [i]="i" (addToCartEvent)="addToCart($event, orderForm)"></product-component>
+        </div>
+    </div>
 </section>
 
 
-<section class="order">
-  <div class="container order__container">
-      <div class="order__strawberry-big strawberry-move"></div>
-      <div class="order__strawberry-mini strawberry-move"></div>
-      <div class="order__grid">
-          <div class="order__macaroons">
-              <img class="order__macaroons-img" src="../assets/img/macaron_Order.png" alt="Macaron Order">
-          </div>
-          <div class="order__macaroon-action">
-              <h2 class="order__h2" id="order-mac">Закажите макарун!</h2>
-              <div class="order__macaroon-text">
-                  Выберите понравившийся макарун, заполните форму и ожидайте звонка нашего пекаря!
-              </div>
-              <div class="order__macaroon-wrapper">
-                  <form class="order__macaroon-form" #orderForm>
-                      <p class="order__macaroon-change"><label for="change">Ваш выбор</label></p>
-                      <input class="base-input base-input__change" name="change" type="text"
-                          placeholder="Напишите, что хотите заказать..." [(ngModel)]="formValues.productTitle">
-                      <p class="order__macaroon-contact">
-                          <label class="order__margin" for="name">Заполните данные заказа</label>
-                          <input class="base-input" name="name" type="text" placeholder="Ваше имя" [(ngModel)]="formValues.name">
-                          <input class="base-input" type="text" name="phone"
-                              placeholder="+375 (__) ___ - __ - __" [(ngModel)]="formValues.phone">
-                          <button type="button" class="btn order__btn" (click)="createOrder()">Оформить заказ</button>
-                      </p>
-                  </form>
-              </div>
-          </div>
-      </div>
+<section class="order" #orderElement>
+    <div class="container order__container">
+        <div class="order__strawberry-big strawberry-move"></div>
+        <div class="order__strawberry-mini strawberry-move"></div>
+        <div class="order__grid">
+            <div class="order__macaroons">
+                <img class="order__macaroons-img" src="../assets/img/macaron_Order.png" alt="Macaron Order">
+            </div>
+            <div class="order__macaroon-action">
+                <h2 class="order__h2" id="order-mac">Закажите макарун!</h2>
+                <div class="order__macaroon-text">
+                    Выберите понравившийся макарун, заполните форму и ожидайте звонка нашего пекаря!
+                </div>
+                <div class="order__macaroon-wrapper">
+                    <form class="order__macaroon-form" #orderForm>
+                        <p class="order__macaroon-change"><label for="change">Ваш выбор</label></p>
+                        <input class="base-input base-input__change" name="change" type="text"
+                            placeholder="Напишите, что хотите заказать..." [(ngModel)]="formValues.productTitle">
+                        <p class="order__macaroon-contact">
+                            <label class="order__margin" for="name">Заполните данные заказа</label>
+                            <input class="base-input" name="name" type="text" placeholder="Ваше имя"
+                                [(ngModel)]="formValues.name">
+                            <input class="base-input" type="text" name="phone" placeholder="+375 (__) ___ - __ - __"
+                                [(ngModel)]="formValues.phone">
+                            <button type="button" class="btn order__btn" (click)="createOrder()">Оформить заказ</button>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
 
-  </div>
+    </div>
 </section>

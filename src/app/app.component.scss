@@ -151,59 +151,6 @@
     margin-top: 83px;
 }
 
-.advantages__item {
-    width: 220px;
-    height: 225px;
-}
-
-
-.advantages__item:hover .advantages__item-circle {
-    background-color: #eba8b1;
-
-}
-
-.advantages__item:hover .advantages__item-num {
-    color: #821328;
-}
-
-.advantages__item-circle {
-    position: relative;
-    border-radius: 50%;
-    background-color: rgb(130, 19, 40);
-    width: 70px;
-    height: 70px;
-    margin-bottom: 13px;
-    transition: all 300ms ease-in;
-}
-
-.advantages__item-num {
-    font-size: 60px;
-    font-family: "GilroyExtraBold", sans-serif;
-    color: white;
-    line-height: 0.65;
-    position: absolute;
-    bottom: 0;
-    left: 21px;
-    z-index: 2;
-    transition: all 500ms ease-in;
-}
-
-.advantages__item-title {
-    font-size: 20px;
-    font-family: "GilroyExtraBold", sans-serif;
-    font-weight: bold;
-    color: rgb(51, 25, 7);
-    margin-bottom: 20px;
-}
-
-.advantages__item-text {
-    font-size: 15px;
-    font-family: "GilroyMedium", sans-serif;
-    color: rgb(51, 25, 7);
-    line-height: 1.333;
-    /* width: 220px; */
-
-}
 
 .advantages__img {
     grid-row-start: 1;
@@ -250,76 +197,7 @@
 
 }
 
-.change__item {
-    display: grid;
-    justify-items: center;
-    grid-template-rows: 1fr 1fr;
-    grid-row-gap: 26px;
-    position: relative;
-    border-width: 2px;
-    border-color: rgb(255, 255, 255);
-    border-style: solid;
-    border-radius: 20px;
-    width: 263px;
-    height: 229px;
-    padding: 109px 21px 27px;
-}
 
-.change__img {
-    position: absolute;
-    top: -59px;
-    left: 34px;
-}
-
-.change__item:hover .change__img-img {
-    transform: scale(1.1);
-}
-
-.change__img-img {
-    width: 100%;
-    transition: all 300ms ease-in;
-
-}
-
-.change__title {
-    font-size: 18px;
-    font-family: "Tavolga";
-    color: rgb(255, 255, 255);
-}
-
-.change__action {
-    display: grid;
-    justify-items: center;
-    grid-column-gap: 30px;
-    grid-template-columns: fit-content(85px) fit-content(130px);
-}
-
-.change__action-unit {
-    font-size: 15px;
-    color: rgb(255, 255, 255);
-}
-
-.change__action-price {
-    grid-column-start: 1;
-    grid-row-start: 2;
-    font-size: 15px;
-    font-family: "Gilroy";
-    color: rgb(255, 255, 255);
-}
-
-.change__action-button {
-    grid-column-start: 2;
-    grid-row-start: 1;
-    grid-row-end: 3;
-}
-
-
-.change__action-btn {
-    font-size: 16px;
-    width: 130px;
-    height: 50px;
-    /* padding: 19px 19px 20px; */
-}
 
 /* order */
 
@@ -432,7 +310,7 @@
     color: rgb(18, 10, 6);
     -moz-transform: matrix(1.00011967125209, 0, 0, 1.00072983989549, 0, 0);
     -webkit-transform: matrix(1.00011967125209, 0, 0, 1.00072983989549, 0, 0);
-    -ms-transform: matrix(1.00011967125209, 0, 0, 1.00072983989549, 0, 0);
+    transform: matrix(1.00011967125209, 0, 0, 1.00072983989549, 0, 0);
     margin-bottom: 20px;
 }
 
@@ -456,7 +334,7 @@
     font-weight: bold;
     -moz-transform: matrix(1.00011967125209, 0, 0, 1.00072983989549, 0, 0);
     -webkit-transform: matrix(1.00011967125209, 0, 0, 1.00072983989549, 0, 0);
-    -ms-transform: matrix(1.00011967125209, 0, 0, 1.00072983989549, 0, 0);
+    transform: matrix(1.00011967125209, 0, 0, 1.00072983989549, 0, 0);
 }
 
 .order__macaroon-contact {
@@ -470,7 +348,7 @@
     font-weight: bold;
     -moz-transform: matrix(1.00011967125209, 0, 0, 1.00072983989549, 0, 0);
     -webkit-transform: matrix(1.00011967125209, 0, 0, 1.00072983989549, 0, 0);
-    -ms-transform: matrix(1.00011967125209, 0, 0, 1.00072983989549, 0, 0);
+    transform: matrix(1.00011967125209, 0, 0, 1.00072983989549, 0, 0);
     margin-bottom: 7px;
 }
 
@@ -580,10 +458,6 @@
         grid-column-gap: 54px;
     }
 
-    .advantages__item-circle {
-        margin-left: auto;
-        margin-right: auto;
-    }
 
     .change__h2 {
         margin-bottom: 143px;
@@ -700,13 +574,6 @@
         gap: 10px;
     }
 
-    .advantages__item {
-        width: unset;
-    }
-
-    .advantages__item-text {
-        width: 250px;
-    }
 
     .advantages__text {
         max-width: unset;

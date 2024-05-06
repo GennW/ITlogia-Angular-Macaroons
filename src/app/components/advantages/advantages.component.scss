@@ -1,0 +1,76 @@
+/* advantages */
+
+
+.advantages__item {
+    width: 220px;
+    height: 225px;
+}
+
+
+.advantages__item:hover .advantages__item-circle {
+    background-color: #eba8b1;
+
+}
+
+.advantages__item:hover .advantages__item-num {
+    color: #821328;
+}
+
+.advantages__item-circle {
+    position: relative;
+    border-radius: 50%;
+    background-color: rgb(130, 19, 40);
+    width: 70px;
+    height: 70px;
+    margin-bottom: 13px;
+    transition: all 300ms ease-in;
+}
+
+.advantages__item-num {
+    font-size: 60px;
+    font-family: "GilroyExtraBold", sans-serif;
+    color: white;
+    line-height: 0.65;
+    position: absolute;
+    bottom: 0;
+    left: 21px;
+    z-index: 2;
+    transition: all 500ms ease-in;
+}
+
+.advantages__item-title {
+    font-size: 20px;
+    font-family: "GilroyExtraBold", sans-serif;
+    font-weight: bold;
+    color: rgb(51, 25, 7);
+    margin-bottom: 20px;
+}
+
+.advantages__item-text {
+    font-size: 15px;
+    font-family: "GilroyMedium", sans-serif;
+    color: rgb(51, 25, 7);
+    line-height: 1.333;
+    /* width: 220px; */
+
+}
+
+
+@media screen and (max-width: 932px) {
+
+    .advantages__item-circle {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (max-width: 374px) {
+
+    .advantages__item {
+        width: unset;
+    }
+
+    .advantages__item-text {
+        width: 250px;
+    }
+}

@@ -15,15 +15,15 @@
             </a>
         </div>
         <div class="phone phone__footer">
-            <a class="phone__link" href="tel:+375293689868">+375 (29) 368-98-68</a>
+            <a class="phone__link" href="tel:{{formattedPhoneNumber}}">{{phoneNumber | phoneFormat}}</a>
         </div>
     </div>
     <div class="gift gift-wrapper" *ngIf="showPresent">
         <div class="gift__img">
-            <div class="circle-cart">1</div>
+            <div class="circle-cart">{{cartService.count}}</div>
             <img class="gift__img-img" src="../assets/img/cart.png" alt="Gift">
             <div class="popup">
-               <span class="popup-price">3,40 руб.</span> 
+               <span class="popup-price">{{cartService.totalPrice.toFixed(2) + ' руб.'}}</span> 
             </div>
         </div>
     </div>
