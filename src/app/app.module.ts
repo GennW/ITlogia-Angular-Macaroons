@@ -12,6 +12,7 @@ import { AdvantagesComponent } from './components/advantages/advantages.componen
 import { ProductComponent } from './components/product/product.component';
 import { TrimDescriptionPipe } from './pipes/trim-description.pipe';
 import { PhoneFormatPipe } from './pipes/phone-format.pipe';
+import { BtnHoverDirective } from './directives/btn-hover.directive';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { PhoneFormatPipe } from './pipes/phone-format.pipe';
     ProductComponent,
     TrimDescriptionPipe,
     PhoneFormatPipe,
+    BtnHoverDirective,
   ],
   imports: [
     BrowserModule,

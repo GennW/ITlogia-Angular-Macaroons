@@ -19,7 +19,8 @@
         </div>
     </div>
     <div class="gift gift-wrapper" *ngIf="showPresent">
-        <div class="gift__img">
+        <div class="gift__img" appBtnHover defaultBackground="linear-gradient(90deg, rgb(113, 8, 30) 0%, rgb(215, 72, 92) 100%)" 
+        hoverBackground="linear-gradient(90deg, rgb(215, 72, 92) 0%, rgb(113, 8, 30) 100%)" >
             <div class="circle-cart">{{cartService.count}}</div>
             <img class="gift__img-img" src="../assets/img/cart.png" alt="Gift">
             <div class="popup">

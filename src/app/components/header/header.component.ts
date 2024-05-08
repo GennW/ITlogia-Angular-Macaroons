@@ -1,3 +1,4 @@
+import { ViewportScroller } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -12,7 +13,7 @@ export class HeaderComponent implements OnInit {
 
   phoneNumber = '375293689868';
   formattedPhoneNumber: string;
-  constructor() {
+  constructor(private scroller: ViewportScroller) {
     this.formattedPhoneNumber = this.formatPhoneNumber(this.phoneNumber);
    }
 
@@ -23,7 +24,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public toScroll(target: HTMLElement):void {
-    target.scrollIntoView({behavior: "smooth"});
+  public toScroll(ancor: string):void {
+    this.scroller.scrollToAnchor(ancor);
   }
 }
